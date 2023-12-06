@@ -1,0 +1,12 @@
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\bin\Debug\dominio.dll
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\bin\Debug\dominio.pdb
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\obj\Debug\dominio.dll
+D:\Users\Gonzalo\Desktop\Proyecto food\Nueva carpeta (3)\Food\dominio\obj\Debug\dominio.pdb
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\bin\Debug\dominio.dll
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\bin\Debug\dominio.pdb
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\obj\Debug\dominio.dll
+D:\Only\PROYECTOS\FoodWeb\FoodWeb\dominio\obj\Debug\dominio.pdb
