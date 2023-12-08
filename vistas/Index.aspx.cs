@@ -14,9 +14,7 @@ namespace vistas
         public List<OutSide> ListaOutSide {  get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Negocio negocio = new Negocio();
-            ListaOutSide = negocio.listarConSP();
-            
+          
         }
     }
 }

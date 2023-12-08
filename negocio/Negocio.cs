@@ -10,7 +10,7 @@ namespace negocio
 {
     public class Negocio
     {
-        public List<OutSide> listarOutSide(int n)
+        public List<OutSide> listarOutSide()
         {
             List<OutSide> lista = new List<OutSide>();
             AccesoDatos datos = new AccesoDatos();
@@ -18,10 +18,11 @@ namespace negocio
             {
                 datos.setearConsulta("select L.ID, L.Nombre, L.Direccion, L.ID_Localidad, L.Descripcion, L.ID_Categoria, L.Barrio as Barrio, Loc.Nombre as Localidad, C.Nombre as Categoria, I.ID_Imagen as ID_Imagen, I.Nombre as Imagen, I.ID as IdFood, L.Afuera as Donde from Locales L inner join Localidades Loc on L.ID_Localidad = Loc.ID_Localidad inner join Categorias C on L.ID_Categoria = C.ID_Categoria inner join Imagenes I on I.ID = L.ID");
                 datos.ejecutarLectura();
+
                 while (datos.Lector.Read())
                 {
                     OutSide aux = new OutSide();
-                    if ((int)datos.Lector["Donde"] == n)
+                    if ((int)datos.Lector["Donde"] == 1)
                     {
                         aux.id = (int)datos.Lector["ID"];
                         aux.name = (string)datos.Lector["Nombre"];
