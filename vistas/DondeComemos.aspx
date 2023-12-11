@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Donde Comemos</h1>
+    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
     <div class="container">
         <div class="row">
             <asp:Repeater ID="Repeater1" runat="server">
@@ -18,6 +19,10 @@
                             <img src="<%# Eval("Imagen.name")%>" class="card-img-top" alt="..." style="width: 100%; border-radius: 10px 10px 0 0;">
                             <div class="card-body">
                                 <p class="card-text"><%# Eval("descripcion") %></p>
+                            </div>
+                            <div class="btn-group">
+                                <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
+                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                             </div>
                         </div>
                     </div>

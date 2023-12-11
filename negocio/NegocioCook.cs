@@ -45,5 +45,25 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        public void addCook(Cooking nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into Cocinar(Nombre, Descripcion, ID_Categoria)values(@nombre, @descripcion, @categoria)");
+                datos.setearParametro("@nombre", nuevo.nombre);
+                datos.setearParametro("@descripcion", nuevo.descripcion);
+                datos.setearParametro("@categoria", nuevo.categoria.id);
+                datos.ejecutarAcccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

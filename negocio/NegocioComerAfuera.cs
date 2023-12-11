@@ -1,5 +1,6 @@
 ﻿using dominio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace negocio
 {
-    public class negocioDelivery
+    public class NegocioComerAfuera
     {
-        public List<OutSide> listarDelivery()
+        public List<OutSide> listarOutSide()
         {
             List<OutSide> lista = new List<OutSide>();
             AccesoDatos datos = new AccesoDatos();
@@ -17,10 +18,11 @@ namespace negocio
             {
                 datos.setearConsulta("select L.ID, L.Nombre, L.Direccion, L.ID_Localidad, L.Descripcion, L.ID_Categoria, L.Barrio as Barrio, Loc.Nombre as Localidad, C.Nombre as Categoria, I.ID_Imagen as ID_Imagen, I.Nombre as Imagen, I.ID as IdFood, L.Afuera as Donde from Locales L inner join Localidades Loc on L.ID_Localidad = Loc.ID_Localidad inner join Categorias C on L.ID_Categoria = C.ID_Categoria inner join Imagenes I on I.ID = L.ID");
                 datos.ejecutarLectura();
+
                 while (datos.Lector.Read())
                 {
                     OutSide aux = new OutSide();
-                    if ((int)datos.Lector["Donde"] == 0 || (int)datos.Lector["Donde"] == 3)
+                    if ((int)datos.Lector["Donde"] == 1 || (int)datos.Lector["Donde"] == 3)
                     {
                         aux.id = (int)datos.Lector["ID"];
                         aux.name = (string)datos.Lector["Nombre"];
@@ -59,6 +61,57 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+        public void addOut(OutSide nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into Locales(Nombre, Direccion,Barrio , ID_Localidad, Descripcion, ID_Categoria, Afuera)values(@nombre, @direccion,@barrio, @localidad, @descripcion, @categoria, @Donde)");
+                datos.setearParametro("@nombre", nuevo.name);
+                datos.setearParametro("@direccion", nuevo.adress);
+                datos.setearParametro("@barrio", nuevo.barrio);
+                datos.setearParametro("@localidad", nuevo.localidad.id);
+                datos.setearParametro("@descripcion", nuevo.descripcion);
+                datos.setearParametro("@categoria", nuevo.categoria.id);
+                datos.setearParametro("@Donde", nuevo.outside);
+                datos.ejecutarAcccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public int ultimoID()
+        {
+            int ultimo = new int();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select ID from Locales");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {                                     
+                     ultimo = (int)datos.Lector["ID"];                                    
+                }
+                return ultimo;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }           
         }
     }
 }

@@ -82,6 +82,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="DondeComemos.aspx" />
     <Content Include="estilos\Style.css" />
+    <Content Include="FormularioDonde.aspx" />
+    <Content Include="FormularioQueCocino.aspx" />
+    <Content Include="FormularioTakeWay.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="QueComemos.aspx" />
@@ -101,6 +104,27 @@
     </Compile>
     <Compile Include="DondeComemos.aspx.designer.cs">
       <DependentUpon>DondeComemos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioDonde.aspx.cs">
+      <DependentUpon>FormularioDonde.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioDonde.aspx.designer.cs">
+      <DependentUpon>FormularioDonde.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioQueCocino.aspx.cs">
+      <DependentUpon>FormularioQueCocino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioQueCocino.aspx.designer.cs">
+      <DependentUpon>FormularioQueCocino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioTakeWay.aspx.cs">
+      <DependentUpon>FormularioTakeWay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioTakeWay.aspx.designer.cs">
+      <DependentUpon>FormularioTakeWay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

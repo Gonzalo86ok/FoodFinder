@@ -14,13 +14,28 @@ namespace vistas
         public List<OutSide> ListaOutSide { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Negocio negocio = new Negocio();
+            NegocioComerAfuera negocio = new NegocioComerAfuera();
             ListaOutSide = negocio.listarOutSide();
             if (!IsPostBack)
             {
                 Repeater1.DataSource = ListaOutSide;
                 Repeater1.DataBind();
             }
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FormularioDonde.aspx");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

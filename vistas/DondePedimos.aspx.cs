@@ -22,5 +22,20 @@ namespace vistas
                 Repeater1.DataBind();
             }
         }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FormularioDonde.aspx");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void bntEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

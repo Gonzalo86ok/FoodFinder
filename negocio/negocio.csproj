@@ -43,8 +43,12 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="Negocio.cs" />
+    <Compile Include="NegocioCategoria.cs" />
+    <Compile Include="NegocioComerAfuera.cs" />
     <Compile Include="NegocioCook.cs" />
     <Compile Include="negocioDelivery.cs" />
+    <Compile Include="NegocioImagen.cs" />
+    <Compile Include="NegocioLocalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
