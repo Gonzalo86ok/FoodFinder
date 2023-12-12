@@ -12,32 +12,7 @@ namespace negocio
     {      
         
         
-        public void modificar(OutSide local)
-        {
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.setearConsulta("update Locales set Nombre = @nombre , Direccion = @direccion, Barrio = @barrio, ID_Localidad = @id_Localidad, Descripcion = @descripcion,ID_Categoria = @id_Categoria where ID = @id");
-                datos.setearParametro("@nombre", local.name);
-                datos.setearParametro("@direccion",local.adress);
-                datos.setearParametro("@barrio", local.barrio);
-                datos.setearParametro("@id_Localidad",local.localidad.id);
-                datos.setearParametro("@descripcion",local.descripcion);
-                datos.setearParametro("@id_Categoria",local.categoria.id);
-                datos.setearParametro("@id",local.id);
-                datos.ejecutarAcccion();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
+        
         
         public void eliminar(int id)
         {

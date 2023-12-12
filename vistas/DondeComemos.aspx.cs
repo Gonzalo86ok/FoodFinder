@@ -30,7 +30,9 @@ namespace vistas
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-
+            Button btn = (Button)sender;
+            string selectedId = btn.CommandArgument;
+            Response.Redirect("FormularioDonde.aspx?id=" + selectedId);
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

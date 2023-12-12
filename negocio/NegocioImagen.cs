@@ -33,8 +33,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update Imagenes set Nombre = @nombre where ID_Imagen = @id and ID = @id_Food");
-                datos.setearParametro("@id", imagen.id);
+                datos.setearConsulta("update Imagenes set Nombre = @nombre where ID = @id_Food");
                 datos.setearParametro("@nombre", imagen.name);
                 datos.setearParametro("@id_Food", imagen.Id_Food);
                 datos.ejecutarAcccion();
@@ -65,6 +64,40 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+        public Imagen buscarID(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select ID_Imagen, Nombre, ID from Imagenes");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Imagen aux = new Imagen();
+                  
+                    if ((int)datos.Lector["ID"] == id)
+                    {                                                 
+                        aux.id = (int)datos.Lector["ID_Imagen"];
+                        aux.name = (string)datos.Lector["Nombre"];
+                        aux.Id_Food = (int)datos.Lector["ID"];
+                        
+                        return aux;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return null;
         }
     }
 }

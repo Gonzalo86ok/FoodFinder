@@ -31,6 +31,36 @@ namespace vistas
                     ddlCategoria.DataTextField = "nombre";
                     ddlCategoria.DataBind();
                 }
+                if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+                {
+                    if (int.TryParse(Request.QueryString["id"], out int id))
+                    {
+                        NegocioComerAfuera negocio = new NegocioComerAfuera();
+                        OutSide outSide = negocio.buscarID(id);
+                        NegocioImagen negocioImagen = new NegocioImagen();
+                        Imagen imagen = negocioImagen.buscarID(id);
+
+                        txtbNombre.Text = outSide.name;
+                        txtbDireccion.Text = outSide.adress;
+                        txtbDescripcion.Text = outSide.descripcion;
+                        txtbBarrio.Text = outSide.barrio;
+
+                        ddlLocalidad.SelectedValue = outSide.localidad.id.ToString();
+                        ddlCategoria.SelectedValue = outSide.categoria.id.ToString();
+
+                        if (outSide.outside == 0)
+                        {
+                            ddlDonde.SelectedValue = "Take way";
+                        }
+                        else
+                        {
+                            ddlDonde.SelectedValue = "Take way y comer ahi";
+                        }
+                        txtbImagen.Text = imagen.name;
+
+                        txtbImagen_TextChanged(sender, e);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -63,7 +93,6 @@ namespace vistas
                 nuevo.descripcion = txtbDescripcion.Text;
                 nuevo.barrio = txtbBarrio.Text;
 
-
                 nuevo.localidad = new Localidad();
                 nuevo.localidad.id = int.Parse(ddlLocalidad.SelectedValue);
 
@@ -79,13 +108,20 @@ namespace vistas
                     nuevo.outside = 3;
                 }
 
-                negocio.addOut(nuevo);
-
-                imagen.Id_Food = negocio.ultimoID();
                 imagen.name = txtbImagen.Text;
-
-                negocioImagen.addImagen(imagen);
-
+                if(Request.QueryString["id"] != null)
+                {
+                    nuevo.id = Convert.ToInt32(Request.QueryString["id"]);
+                    negocio.modificar(nuevo);
+                    imagen.Id_Food = Convert.ToInt32(Request.QueryString["id"]);
+                    negocioImagen.modificarImagen(imagen);
+                }
+                else
+                {
+                    negocio.addOut(nuevo);
+                    imagen.Id_Food = negocio.ultimoID();
+                    negocioImagen.addImagen(imagen);
+                }
                 Response.Redirect("DondePedimos.aspx", false);
             }
             catch (Exception ex)

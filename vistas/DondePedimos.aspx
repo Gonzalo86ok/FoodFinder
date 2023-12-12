@@ -22,7 +22,7 @@
                                 <p class="card-text"><%# Eval("descripcion") %></p>
                             </div>
                             <div class="btn-group">
-                                <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
+                                <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" CommandArgument='<%# Eval("Id") %>'/>
                                 <asp:Button ID="bntEliminar" runat="server" Text="Eliminar" OnClick="bntEliminar_Click" />
                             </div>
                         </div>

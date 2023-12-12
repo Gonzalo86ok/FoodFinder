@@ -39,8 +39,6 @@
         </div>
 
 
-
-
         <div class="col-6">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
