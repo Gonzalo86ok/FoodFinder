@@ -35,7 +35,7 @@ namespace vistas
                 {
                     if (int.TryParse(Request.QueryString["id"], out int id))
                     {
-                        NegocioComerAfuera negocio = new NegocioComerAfuera();
+                        negocioDelivery negocio = new negocioDelivery();
                         OutSide outSide = negocio.buscarID(id);
                         NegocioImagen negocioImagen = new NegocioImagen();
                         Imagen imagen = negocioImagen.buscarID(id);

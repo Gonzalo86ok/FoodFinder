@@ -15,29 +15,37 @@ namespace vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             negocioDelivery negocio = new negocioDelivery();
-            ListaOutSide = negocio.listarDelivery();
+            Session.Add("listaLocales", negocio.listarDelivery());
             if (!IsPostBack)
             {
-                Repeater1.DataSource = ListaOutSide;
+                Repeater1.DataSource = Session["listaLocales"];
                 Repeater1.DataBind();
-            }
+            }                      
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FormularioDonde.aspx");
+            Response.Redirect("FormularioTakeWay.aspx");
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             string selectedId = btn.CommandArgument;
-            Response.Redirect("FormularioDonde.aspx?id=" + selectedId);
+            Response.Redirect("FormularioTakeWay.aspx?id=" + selectedId);
         }
 
         protected void bntEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void txtbFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<OutSide> lista = (List<OutSide>)Session["listaLocales"];
+            List<OutSide> listaFiltrada = lista.FindAll(x => x.name.ToUpper().Contains(txtbFiltro.Text.ToUpper()));
+            Repeater1.DataSource = listaFiltrada;
+            Repeater1.DataBind();
         }
     }
 }

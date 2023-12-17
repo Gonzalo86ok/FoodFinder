@@ -15,6 +15,15 @@ namespace vistas
     {
 
         /// <summary>
+        /// Control txtbFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbFiltro;
+
+        /// <summary>
         /// Control btnAgregar.
         /// </summary>
         /// <remarks>

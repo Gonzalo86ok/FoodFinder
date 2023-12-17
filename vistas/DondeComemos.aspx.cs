@@ -15,10 +15,10 @@ namespace vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             NegocioComerAfuera negocio = new NegocioComerAfuera();
-            ListaOutSide = negocio.listarOutSide();
+            Session.Add("listaLocales", negocio.listarOutSide());          
             if (!IsPostBack)
             {
-                Repeater1.DataSource = ListaOutSide;
+                Repeater1.DataSource = Session["listaLocales"];
                 Repeater1.DataBind();
             }
         }
@@ -38,6 +38,14 @@ namespace vistas
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Filtro_TextChanged(object sender, EventArgs e)
+        {
+            List<OutSide> lista = (List<OutSide>)Session["listaLocales"];
+            List<OutSide> listaFiltrada = lista.FindAll(x => x.name.ToUpper().Contains(txtbFiltro.Text.ToUpper()) || x.adress.ToUpper().Contains(txtbFiltro.Text.ToUpper()));
+            Repeater1.DataSource = listaFiltrada;
+            Repeater1.DataBind();
         }
     }
 }

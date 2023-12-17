@@ -6,7 +6,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Donde Comemos</h1>
-    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="md-3">
+                <asp:Label Text="Filtro" runat="server" />
+                <asp:TextBox runat="server" ID="txtbFiltro" AutoPostBack="true" OnTextChanged="Filtro_TextChanged" CssClass="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="md-3">
+            <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" CssClass="btn btn-primary" />
+            <div class="mb-2"></div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <asp:Repeater ID="Repeater1" runat="server">
@@ -16,12 +30,12 @@
                             <div class="card-body">
                                 <h3 class="card-title"><%# Eval("name") %></h3>
                             </div>
-                            <img src="<%# Eval("Imagen.name")%>" class="card-img-top" alt="..." style="width: 100%; border-radius: 10px 10px 0 0;">
+                            <img src="<%# Eval("Imagen.name")%>" class="card-img-top" alt="..." style="width: 100%; height: 200px; border-radius: 10px 10px 0 0; object-fit: cover;">
                             <div class="card-body">
                                 <p class="card-text"><%# Eval("descripcion") %></p>
                             </div>
                             <div class="btn-group">
-                                <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" CommandArgument='<%# Eval("Id") %>'/>
+                                <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" CommandArgument='<%# Eval("Id") %>' />
                                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
                             </div>
                         </div>
