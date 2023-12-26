@@ -11,17 +11,8 @@ namespace vistas
 {
 
 
-    public partial class FormularioDondeComemos
+    public partial class DetalleDelivery
     {
-
-        /// <summary>
-        /// Control ScriptManager1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
         /// Control lbNombre.
@@ -33,13 +24,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbNombre;
 
         /// <summary>
-        /// Control txtbNombre.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbNombre;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control lbDireccion.
@@ -51,13 +42,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbDireccion;
 
         /// <summary>
-        /// Control txtbDireccion.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbDireccion;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// Control lbDescripcion.
@@ -69,13 +60,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbDescripcion;
 
         /// <summary>
-        /// Control txtbDescripcion.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbDescripcion;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// Control lbBarrio.
@@ -87,13 +78,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbBarrio;
 
         /// <summary>
-        /// Control txtbBarrio.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbBarrio;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// Control lbLocalidad.
@@ -105,13 +96,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbLocalidad;
 
         /// <summary>
-        /// Control ddlLocalidad.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLocalidad;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
         /// Control lbCategoria.
@@ -123,58 +114,13 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbCategoria;
 
         /// <summary>
-        /// Control ddlCategoria.
+        /// Control Label6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
-
-        /// <summary>
-        /// Control lbDonde.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDonde;
-
-        /// <summary>
-        /// Control ddlDonde.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDonde;
-
-        /// <summary>
-        /// Control btnAgregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
-
-        /// <summary>
-        /// Control btnCancelar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
-
-        /// <summary>
-        /// Control UpdatePanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
         /// Control lbImagen.
@@ -186,15 +132,6 @@ namespace vistas
         protected global::System.Web.UI.WebControls.Label lbImagen;
 
         /// <summary>
-        /// Control txtbImagen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbImagen;
-
-        /// <summary>
         /// Control img.
         /// </summary>
         /// <remarks>
@@ -202,5 +139,14 @@ namespace vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img;
+
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

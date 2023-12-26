@@ -10,6 +10,7 @@ namespace dominio
     {
         public string nombre { get; set; }
         public Categoria categoria { get; set; }
+        public String receta { get; set; }
     }
 
 }

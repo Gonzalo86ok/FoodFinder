@@ -25,14 +25,19 @@
                     <div class="col-md-4">
                         <div class="card" style="width: 100%; border-radius: 10px; overflow: hidden; margin: 10px; height: 100%;">
                             <div class="card-body">
-                                <h3 class="card-title"><%# Eval("name") %></h3>
+                                <h3 class="card-title">
+                                    <a href='<%# "DetalleDelivery.aspx?id=" + Eval("Id") %>' style="color: black; text-decoration: none;"><%# Eval("name") %></a>
+                                </h3>
                             </div>
-                            <img src="<%# Eval("Imagen.name")%>" class="card-img-top" alt="..." style="width: 100%; height: 200px; border-radius: 10px 10px 0 0; object-fit: cover;">
+                            <a href='<%# "DetalleDelivery.aspx?id=" + Eval("Id") %>'>
+                                <img src="<%# Eval("Imagen.name")%>" class="card-img-top" alt="..." style="width: 100%; height: 200px; border-radius: 10px 10px 0 0; object-fit: cover;">
+                            </a>
                             <div class="card-body">
                                 <p class="card-text"><%# Eval("descripcion") %></p>
                             </div>
                             <div class="btn-group">
                                 <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" CommandArgument='<%# Eval("Id") %>' />
+                                &nbsp;
                                 <asp:Button ID="bntEliminar" runat="server" Text="Eliminar" OnClick="bntEliminar_Click" />
                             </div>
                         </div>

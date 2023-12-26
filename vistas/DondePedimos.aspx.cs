@@ -43,7 +43,7 @@ namespace vistas
         protected void txtbFiltro_TextChanged(object sender, EventArgs e)
         {
             List<OutSide> lista = (List<OutSide>)Session["listaLocales"];
-            List<OutSide> listaFiltrada = lista.FindAll(x => x.name.ToUpper().Contains(txtbFiltro.Text.ToUpper()));
+            List<OutSide> listaFiltrada = lista.FindAll(x => x.barrio.ToUpper().Contains(txtbFiltro.Text.ToUpper()) || x.name.ToUpper().Contains(txtbFiltro.Text.ToUpper()));
             Repeater1.DataSource = listaFiltrada;
             Repeater1.DataBind();
         }
